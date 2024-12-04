@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>MysticMane</title>
+    <title>Barber</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {% load static %}
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-{#    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">#}
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -54,12 +54,10 @@
                                         <nav>
                                             <ul id="navigation">
                                                 <li><a class="active" href="{% url 'index' %}">home</a></li>
-                                                <li><a href="{% url 'about' %}">about</a></li>
-                                                <li><a href="{% url 'service' %}">services</a></li>
+                                                 <li><a href="{% url 'about' %}">about</a></li>
+                                                <li><a href="{% url 'service' %}">Services</a></li>
                                                 <li><a href="{% url 'pricing' %}">Pricing</a></li>
                                                 <li><a href="{% url 'appointment' %}">Appointment</a></li>
-
-
                                                 <li><a href="#">blog <i class="ti-angle-down"></i></a>
                                                     <ul class="submenu">
                                                         <li><a href="{% url 'blog' %}">blog</a></li>
@@ -68,7 +66,7 @@
                                                 </li>
                                                 <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                                     <ul class="submenu">
-
+                                                        <li><a href="{% url 'about' %}">about</a></li>
                                                         <li><a href="{% url 'elements' %}">elements</a></li>
                                                     </ul>
                                                 </li>
@@ -94,152 +92,24 @@
     </header>
     <!-- header-end -->
 
-<!-- slider_area_start -->
-<!-- slider_area_start -->
-    <div class="slider_area">
-        <div class="slider_active owl-carousel">
-            <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1 overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-8">
-                            <div class="slider_text">
-                                <h3>MysticMane Hair Haven</h3>
-                                <p>Unveil your inner radiance at Mystic Mane Hair Haven—where every strand is pampered, every style is art, and your hair’s magic meets our touch.</p>
-                                <a href="#" class="boxed-btn3">Appointment</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="single_slider d-flex align-items-center justify-content-center slider_bg_2 overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-8">
-                            <div class="slider_text">
-                                <h3>MysticMane Hair Haven</h3>
-                                <p>Step into Mystic Mane Hair Haven, a sanctuary of style and care, transforming your hair into a masterpiece of beauty, confidence, and enchantment with every visit.</p>
-                                <a href="#" class="boxed-btn3">Appointment</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="single_slider d-flex align-items-center justify-content-center slider_bg_3 overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-8">
-                            <div class="slider_text">
-                                <h3>MysticMane Hair Haven</h3>
-                                <p>Mystic Mane Hair Haven: A place where artistry, innovation, and care meet to create breathtaking transformations that celebrate the beauty, strength, and magic of your hair.</p>
-                                <a href="#" class="boxed-btn3">Appointment</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- slider_area_end -->
-
-    <!-- about_area_start -->
-    <div class="about_area ">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="about_thumbs">
-                        <div class="large_img_1">
-                            <img src="{% static 'img/about/about_lft.png' %}" alt="">
-                        </div>
-                        <div class="small_img_1">
-                            <img src="{% static 'img/about/about_right.png' %}" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="about_info">
-                        <div class="section_title mb-20px">
-                            <h3>About Us</h3>
-                            <p>Welcome to Mystic Mane Hair Haven, where your hair is our art and your beauty is our passion. We specialize in crafting personalized hair care experiences, blending premium products with expert techniques to deliver flawless results. From luxurious treatments to bold transformations, we’re dedicated to enhancing your natural beauty while keeping your hair healthy and vibrant. At Mystic Mane, every visit is a celebration of self-care and confidence. Whether you’re here for a routine pampering or a fresh, new look, our skilled team ensures you leave glowing inside and out. Step in, unwind, and let your mane shine!</p>
-                        </div>
-                        <p class="opening_hour">
-                            Opening Hour
-                            <span>7:00 am - 10:00 pm</span>
-                        </p>
-                        <a href="{% url 'about' %}" class="boxed-btn3">About Us</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- about_area_end -->
-
-     <!-- services area -->
-    <div class="service_area">
-        <div class="container">
-            <div class="row justify-content-center ">
-                <div class="col-lg-6 col-md-10">
-                    <div class="section_title text-center mb-55">
-                        <h3>Our Services</h3>
-                        <p>At Mystic Mane Hair Haven, we offer  variety of services. Our Beautique Offerings are crafted to elevate your hair care experience. From luxurious treatments to trendsetting cuts, bold coloring, and nourishing therapies, we’re here to pamper, style, and inspire your look. Discover beauty, redefined.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_service">
-                         <div class="service_thumb">
-                             <img src="{% static 'img/service/1.png' %}" alt="">
-                         </div>
-                         <div class="service_content text-center">
-                            <div class="icon">
-                                <i class="flaticon-shave"></i>
-                            </div>
-                            <h3>Hair Color, Highlights & Styling</h3>
-                            <p>Expert haircuts and styling to elevate your look! From sleek and sophisticated to bold and trendy, we bring out your best style, making every day a great hair day at Mystic Mane Hair Haven!</p>
-                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_service">
-                         <div class="service_thumb">
-                             <img src="{% static 'img/service/2.png' %}" alt="">
-                         </div>
-                         <div class="service_content text-center">
-                            <div class="icon">
-                                <i class="flaticon-barber"></i>
-                            </div>
-                            <h3>Bridal & Event Hair Styling</h3>
-                            <p>Bridal & Event Hair Styling that leaves a lasting impression! Let us craft the perfect hairstyle for your special day, making you feel elegant, timeless, and radiant as you celebrate life’s moments.</p>
-                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_service">
-                         <div class="service_thumb">
-                             <img src="{% static 'img/service/3.png' %}" alt="">
-                         </div>
-                         <div class="service_content text-center">
-                            <div class="icon">
-                                <i class="flaticon-null"></i>
-                            </div>
-                            <h3>Nail Art & Designs</h3>
-                            <p>Elevate your style, one nail at a time. Discover the world of exquisite nail art and designs, tailored to your unique taste. From classic elegance to bold and trendy, our expert artists will transform your nails into stunning works of art.</p>
-                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
- <!-- services area end-->
-
-
-     <!-- pricing area start -->
-    <div class="prising_area">
+    <!-- bradcam_area_start -->
+     <div class="bradcam_area breadcam_bg overlay">
         <div class="container">
             <div class="row">
-                <div class="col-xl-6 col-md-6">
-                    <div class="section_title mb-55">
-                        <h3>Our Pricing</h3>
+                <div class="col-lg-12">
+                    <h3>Pricing</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bradcam_area_end -->
+<!-- pricing area start -->
+    <div class="prising_area">
+        <div class="container">
+            <div  class="row justify-content-center ">
+                <div class="col-lg-6 col-md-10">
+                    <div class="section_title text-center mb-55">
+                        <h3>Our Prices</h3>
                         <p>We offer satisfying services at pocket friendly fee.</p>
                     </div>
                 </div>
@@ -543,184 +413,9 @@
     </div>
  <!-- pricing area end -->
 
-    <!-- team_area_start  -->
-    <div class="team_area">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 col-md-10">
-                    <div class="section_title text-center mb-55">
-                        <h3>Our Stylists</h3>
-                        <p>In MysticMane Haven we have the best stylists, well skilled to give you the best of the best.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_team_member">
-                        <div class="team_thumb">
-                            <img src="{% static 'img/team/1.png' %}" alt="">
-                        </div>
-                        <div class="member_info text-center">
-                            <h3>Maria Njeri</h3>
-                            <p>Hair Stylist and locks technician</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_team_member">
-                        <div class="team_thumb">
-                            <img src="{% static 'img/team/2.png' %}" alt="">
-                        </div>
-                        <div class="member_info text-center">
-                            <h3>Jay Wafula</h3>
-                            <p>Barber and Bridal hir stylist</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_team_member">
-                        <div class="team_thumb">
-                            <img src="{% static 'img/team/3.png' %}" alt="">
-                        </div>
-                        <div class="member_info text-center">
-                            <h3>Ann Auma</h3>
-                            <p>Nail Technician and Kid's Stylist</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- team_area_end  -->
-
-    <!-- testimonial_area  -->
-    <div class="testimonial_area  ">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="section_title mb-40 text-center">
-                        <h3>
-                            Testimonials
-                        </h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="testmonial_active owl-carousel">
-                        <div class="single_carousel">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-7 col-md-10">
-                                    <div class="single_testmonial text-center">
-                                        <p>Having being a Mystic haven client for the past six months, I'd say their services are amazing.I recommend them for their great services. Try them, you will love it!</p>
-                                        <div class="testmonial_author">
-                                            <div class="thumb">
-                                                <img src="{% static 'img/testmonial/1.png' %}" alt="">
-                                            </div>
-                                            <h3>Mueni, Locs and nail client.</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_carousel">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-7 col-md-10">
-                                    <div class="single_testmonial text-center">
-                                        <p>For a parent trying to look for a Kid's hairstylist, MysticMane is your go to spot. They offer well tailored services for kids.</p>
-                                        <div class="testmonial_author">
-                                            <div class="thumb">
-                                                <img src="{% static 'img/testmonial/1.png' %}" alt="">
-                                            </div>
-                                            <h3>Mama Jay</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_carousel">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-7 col-md-10">
-                                    <div class="single_testmonial text-center">
-                                        <p>They are the best, nails done at MysticMane give you a good service for months. I recommend!</p>
-                                        <div class="testmonial_author">
-                                            <div class="thumb">
-                                                <img src="{% static 'img/testmonial/1.png' %}" alt="">
-                                            </div>
-                                            <h3>Ariana, Nail client</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /testimonial_area  -->
-
-    <div class="make_apppointment_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section_title pl-68">
-                        <h3>Make an Appointment</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="appoint_ment_form pl-68">
-                        <form action="#">
-                            <div class="single_field">
-                                <input type="text" placeholder="Name">
-                            </div>
-                            <div class="single_field">
-                                <input type="text" placeholder="Email">
-                            </div>
-                            <div class="single_field m-0">
-                                <textarea id="" cols="30" rows="10" placeholder="Message"></textarea>
-                            </div>
-                            <p>Make an appointment with us,we are more than ready to give you the best services <br>
-                               and excited to serve you. </p>
-                            <div class="form_btn">
-                                <button class="boxed-btn3" type="submit">Send message</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-4 offset-lg-1">
-                    <div class="appointMent_info">
-                        <div class="single_appontment">
-                            <h4>Visit our Haven</h4>
-                            <p>Tom Mboya Street, P. O Box 34, 10100.
-                                Nairobi-Kenya</p>
-                        </div>
-                        <div class="single_appontment">
-                            <h4>Message us</h4>
-                            <p>mystichaven@gmail.com <br>
-                                +2547-39-236-420</p>
-                        </div>
-                        <div class="single_appontment">
-                            <h4>Working Hours</h4>
-                            <p class="d-flex justify-content-between">
-                                <span>Monday - Friday</span>
-                                <span>:  09.00am - 23.00pm</span>
-                            </p>
-                            <p class="d-flex justify-content-between">
-                                <span>Sunday</span>
-                                <span>:  09.00am - 16.00pm</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
-    <!-- footer_start  -->
+ <!-- footer_start  -->
     <footer class="footer">
         <div class="footer_top">
             <div class="container">
@@ -816,56 +511,7 @@
     </footer>
     <!-- footer_end  -->
 
-
-    <!-- form itself end-->
-    <form id="test-form" class="white-popup-block mfp-hide">
-            <div class="popup_box ">
-                    <div class="popup_inner">
-                        <h3>Make an Appointment</h3>
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-xl-6 col-md-6">
-                                    <input id="datepicker" placeholder="Date">
-                                </div>
-                                <div class="col-xl-6 col-md-6">
-                                    <input id="timepicker" placeholder="time">
-                                </div>
-                                <div class="col-xl-6 col-md-6">
-                                    <select class="form-select wide" id="default-select" class="">
-                                        <option data-display="Choose services">Choose services 1</option>
-                                        <option value="1">Choose services 2</option>
-                                        <option value="2">Choose services 3</option>
-                                        <option value="3">Choose services 4</option>
-                                    </select>
-                                </div>
-                                <div class="col-xl-6 col-md-6">
-                                    <select class="form-select wide" id="default-select" class="">
-                                        <option data-display="Choose Barbers">Choose Barbers</option>
-                                        <option value="1">Zaki</option>
-                                        <option value="2">Ronky</option>
-                                        <option value="3">kalu</option>
-                                    </select>
-                                </div>
-                                <div class="col-xl-6 col-md-6">
-                                    <input type="text" placeholder="Your name">
-                                </div>
-                                <div class="col-xl-6 col-md-6">
-                                    <input type="text" placeholder="Phone no">
-                                </div>
-                                <div class="col-xl-12">
-                                    <input type="email" placeholder="Your email">
-                                </div>
-                                <div class="col-xl-12">
-                                    <button type="submit" class="boxed-btn3">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-        </form>
-<!-- form itself end -->
-
-    <!-- JS here -->
+ <!-- JS here -->
     <script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
     <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
@@ -912,6 +558,3 @@
          format: 'HH.MM'
      });
     </script>
-</body>
-
-</html>

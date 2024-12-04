@@ -1413,8 +1413,10 @@ h3 {
     position: absolute;
     right: 0;
     bottom: 0;
-    border-top: 15px solid #ffffff;
-    border-left: 15px solid #ffffff;
+    border-top: 15px solid
+ #ffffff;
+    border-left: 15px solid
+ #ffffff;
     top: auto;
     width: 50%;
     height: 60%;
@@ -1461,8 +1463,11 @@ h3 {
   font-size: 25px;
   color: #eb592d;
   margin-bottom: 35px;
-}
 
+}
+.prs{
+  text-align: -moz-center;
+}
 /* line 25, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_prising.scss */
 .prising_area .single_service {
   margin-bottom: 50px;

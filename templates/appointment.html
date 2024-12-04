@@ -54,7 +54,6 @@
                                         <nav>
                                             <ul id="navigation">
                                                 <li><a class="active" href="{% url 'index' %}">home</a></li>
-                                                 <li><a href="{% url 'about' %}">about</a></li>
                                                 <li><a href="{% url 'service' %}">Services</a></li>
                                                 <li><a href="{% url 'pricing' %}">Pricing</a></li>
                                                 <li><a href="{% url 'appointment' %}">Appointment</a></li>
@@ -70,7 +69,7 @@
                                                         <li><a href="{% url 'elements' %}">elements</a></li>
                                                     </ul>
                                                 </li>
-
+                                                <li><a href="{% url 'contact' %}">Contact</a></li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -105,124 +104,102 @@
     </div>
     <!-- bradcam_area_end -->
 
-   <!-- services area -->
-    <div class="service_area">
-        <div class="container">
-            <div class="row justify-content-center ">
-                <div class="col-lg-6 col-md-10">
-                    <div class="section_title text-center mb-55">
-                        <h3>Our Services</h3>
-                        <p>At Mystic Mane Hair Haven, we offer  variety of services. Our Beautique Offerings are crafted to elevate your hair care experience. From luxurious treatments to trendsetting cuts, bold coloring, and nourishing therapies, we’re here to pamper, style, and inspire your look. Discover beauty, redefined.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_service">
-                         <div class="service_thumb">
-                             <img src="{% static 'img/service/1.png' %}" alt="">
-                         </div>
-                         <div class="service_content text-center">
-                            <div class="icon">
-                                <i class="flaticon-shave"></i>
-                            </div>
-                            <h3>Hair Color, Highlights & Styling</h3>
-                            <p>Expert haircuts and styling to elevate your look! From sleek and sophisticated to bold and trendy, we bring out your best style, making every day a great hair day at Mystic Mane Hair Haven!</p>
-                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_service">
-                         <div class="service_thumb">
-                             <img src="{% static 'img/service/2.png' %}" alt="">
-                         </div>
-                         <div class="service_content text-center">
-                            <div class="icon">
-                                <i class="flaticon-barber"></i>
-                            </div>
-                            <h3>Bridal & Event Hair Styling</h3>
-                            <p>Bridal & Event Hair Styling that leaves a lasting impression! Let us craft the perfect hairstyle for your special day, making you feel elegant, timeless, and radiant as you celebrate life’s moments.</p>
-                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_service">
-                         <div class="service_thumb">
-                             <img src="{% static 'img/service/3.png' %}" alt="">
-                         </div>
-                         <div class="service_content text-center">
-                            <div class="icon">
-                                <i class="flaticon-null"></i>
-                            </div>
-                            <h3>Nail Art & Designs</h3>
-                            <p>Elevate your style, one nail at a time. Discover the world of exquisite nail art and designs, tailored to your unique taste. From classic elegance to bold and trendy, our expert artists will transform your nails into stunning works of art.</p>
-                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
- <!-- services area end-->
-
-
-    <div class="make_apppointment_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section_title pl-68">
+ <!-- form itself end-->
+    <form id="test-form" class="white-popup-block mfp-hide">
+            <div class="popup_box ">
+                    <div class="popup_inner">
                         <h3>Make an Appointment</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="appoint_ment_form pl-68">
                         <form action="#">
-                            <div class="single_field">
-                                <input type="text" placeholder="Name">
-                            </div>
-                            <div class="single_field">
-                                <input type="text" placeholder="Email">
-                            </div>
-                            <div class="single_field m-0">
-                                <textarea id="" cols="30" rows="10" placeholder="Message"></textarea>
-                            </div>
-                            <p>I’m available for commissions and collaborations, and i’m <br>
-                                excited to hear from you about new projects.</p>
-                            <div class="form_btn">
-                                <button class="boxed-btn3" type="submit">Send message</button>
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6">
+                                    <input id="datepicker" placeholder="Date">
+                                </div>
+                                <div class="col-xl-6 col-md-6">
+                                    <input id="timepicker" placeholder="time">
+                                </div>
+                                <div class="col-xl-6 col-md-6">
+                                    <select class="form-select wide" id="default-select" class="">
+                                        <option data-display="Choose services">Choose services 1</option>
+                                        <option value="1">Choose services 2</option>
+                                        <option value="2">Choose services 3</option>
+                                        <option value="3">Choose services 4</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-6 col-md-6">
+                                    <select class="form-select wide" id="default-select" class="">
+                                        <option data-display="Choose Barbers">Choose Barbers</option>
+                                        <option value="1">Zaki</option>
+                                        <option value="2">Ronky</option>
+                                        <option value="3">kalu</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-6 col-md-6">
+                                    <input type="text" placeholder="Your name">
+                                </div>
+                                <div class="col-xl-6 col-md-6">
+                                    <input type="text" placeholder="Phone no">
+                                </div>
+                                <div class="col-xl-12">
+                                    <input type="email" placeholder="Your email">
+                                </div>
+                                <div class="col-xl-12">
+                                    <button type="submit" class="boxed-btn3">Submit</button>
+                                </div>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-4 offset-lg-1">
-                    <div class="appointMent_info">
-                        <div class="single_appontment">
-                            <h4>Visit our studio at</h4>
-                            <p>221B Baker Street, P. O Box 3 Park Road, 
-                                USA - 215852</p>
-                        </div>
-                        <div class="single_appontment">
-                            <h4>Message us</h4>
-                            <p>Support@colorlib.net <br>
-                                (+68) 120034509</p>
-                        </div>
-                        <div class="single_appontment">
-                            <h4>Working Hours</h4>
-                            <p class="d-flex justify-content-between">
-                                <span>Monday - Friday</span>
-                                <span>:  09.00 - 23.00</span>
-                            </p>
-                            <p class="d-flex justify-content-between">
-                                <span>Sunday</span>
-                                <span>:  09.00 - 16.00s</span>
-                            </p>
-                        </div>
+        </form>
+<!-- form itself end -->
+
+     <!-- form itself end-->
+    <form id="test-form" class="white-popup-block mfp-hide">
+            <div class="popup_box ">
+                    <div class="popup_inner">
+                        <h3>Make an Appointment</h3>
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6">
+                                    <input id="datepicker" placeholder="Date">
+                                </div>
+                                <div class="col-xl-6 col-md-6">
+                                    <input id="timepicker" placeholder="time">
+                                </div>
+                                <div class="col-xl-6 col-md-6">
+                                    <select class="form-select wide" id="default-select" class="">
+                                        <option data-display="Choose services">Choose services 1</option>
+                                        <option value="1">Choose services 2</option>
+                                        <option value="2">Choose services 3</option>
+                                        <option value="3">Choose services 4</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-6 col-md-6">
+                                    <select class="form-select wide" id="default-select" class="">
+                                        <option data-display="Choose Barbers">Choose Barbers</option>
+                                        <option value="1">Zaki</option>
+                                        <option value="2">Ronky</option>
+                                        <option value="3">kalu</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-6 col-md-6">
+                                    <input type="text" placeholder="Your name">
+                                </div>
+                                <div class="col-xl-6 col-md-6">
+                                    <input type="text" placeholder="Phone no">
+                                </div>
+                                <div class="col-xl-12">
+                                    <input type="email" placeholder="Your email">
+                                </div>
+                                <div class="col-xl-12">
+                                    <button type="submit" class="boxed-btn3">Submit</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+        </form>
+<!-- form itself end -->
+
 
 
     <!-- footer_start  -->
@@ -321,9 +298,7 @@
     </footer>
     <!-- footer_end  -->
 
-
-
-    <!-- JS here -->
+ <!-- JS here -->
     <script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
     <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
@@ -370,6 +345,3 @@
          format: 'HH.MM'
      });
     </script>
-</body>
-
-</html>
