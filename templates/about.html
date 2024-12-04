@@ -52,33 +52,18 @@
                                 <div class="menu_wrap_inner d-flex align-items-center justify-content-end">
                                     <div class="main-menu">
                                         <nav>
-                                            <ul id="navigation">
+                                             <ul id="navigation">
                                                 <li><a class="active" href="{% url 'index' %}">home</a></li>
-                                                 <li><a href="{% url 'about' %}">about</a></li>
-                                                <li><a href="{% url 'service' %}">Services</a></li>
+                                                <li><a href="{% url 'about' %}">About</a></li>
+                                                <li><a href="{% url 'blog' %}">Blog</a></li>
+                                                <li><a href="{% url 'service' %}">services</a></li>
                                                 <li><a href="{% url 'pricing' %}">Pricing</a></li>
                                                 <li><a href="{% url 'appointment' %}">Appointment</a></li>
-                                                <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                                    <ul class="submenu">
-                                                        <li><a href="{% url 'blog' %}">blog</a></li>
-                                                        <li><a href="{% url 'single_blog' %}">single-blog</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                                    <ul class="submenu">
-                                                        <li><a href="{% url 'about' %}">about</a></li>
-                                                        <li><a href="{% url 'elements' %}">elements</a></li>
-                                                    </ul>
-                                                </li>
-
+                                                <li><a href="{% url 'contact' %}">Contact</a></li>
                                             </ul>
                                         </nav>
                                     </div>
-                                    <div class="book_room">
-                                        <div class="book_btn">
-                                            <a class="popup-with-form" href="#test-form">Appointment</a>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -97,13 +82,14 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h3>About us</h3>
+                    <a href="{% url 'appointment' %}" class="boxed-btn3">Appointment</a>
                 </div>
             </div>
         </div>
     </div>
     <!-- bradcam_area_end -->
 
-    <!-- about_area_start -->
+<!-- about_area_start -->
     <div class="about_area ">
         <div class="container">
             <div class="row align-items-center">
@@ -121,13 +107,13 @@
                     <div class="about_info">
                         <div class="section_title mb-20px">
                             <h3>About Us</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing eliteiusmod tempor incididunt ut labore et dolore magna aliqua. Qpsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Quis ipsum suspendisse ultr.</p>
+                            <p>Welcome to Mystic Mane Hair Haven, where your hair is our art and your beauty is our passion. We specialize in crafting personalized hair care experiences, blending premium products with expert techniques to deliver flawless results. From luxurious treatments to bold transformations, we’re dedicated to enhancing your natural beauty while keeping your hair healthy and vibrant. At Mystic Mane, every visit is a celebration of self-care and confidence. Whether you’re here for a routine pampering or a fresh, new look, our skilled team ensures you leave glowing inside and out. Step in, unwind, and let your mane shine!</p>
                         </div>
                         <p class="opening_hour">
                             Opening Hour
-                            <span>10:00 am - 10:00 pm</span>
+                            <span>7:00 am - 10:00 pm</span>
                         </p>
-                        <a href="about.html" class="boxed-btn3">About Us</a>
+                        <a href="{% url 'about' %}" class="boxed-btn3">About Us</a>
                     </div>
                 </div>
             </div>
@@ -141,8 +127,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-10">
                     <div class="section_title text-center mb-55">
-                        <h3>Barber</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
+                        <h3>Our Stylists</h3>
+                        <p>In MysticMane Haven we have the best stylists, well skilled to give you the best of the best.</p>
                     </div>
                 </div>
             </div>
@@ -153,8 +139,8 @@
                             <img src="{% static 'img/team/1.png' %}" alt="">
                         </div>
                         <div class="member_info text-center">
-                            <h3>Jhon Smith</h3>
-                            <p>Junior Barber</p>
+                            <h3>Maria Njeri</h3>
+                            <p>Hair Stylist and locks technician</p>
                         </div>
                     </div>
                 </div>
@@ -164,8 +150,8 @@
                             <img src="{% static 'img/team/2.png' %}" alt="">
                         </div>
                         <div class="member_info text-center">
-                            <h3>Jems Smith</h3>
-                            <p>Junior Barber</p>
+                            <h3>Jay Wafula</h3>
+                            <p>Barber and Bridal hir stylist</p>
                         </div>
                     </div>
                 </div>
@@ -175,8 +161,8 @@
                             <img src="{% static 'img/team/3.png' %}" alt="">
                         </div>
                         <div class="member_info text-center">
-                            <h3>Thomas J Watson</h3>
-                            <p>Junior Barber</p>
+                            <h3>Ann Auma</h3>
+                            <p>Nail Technician and Kid's Stylist</p>
                         </div>
                     </div>
                 </div>
@@ -192,7 +178,7 @@
                 <div class="col-xl-12">
                     <div class="section_title mb-40 text-center">
                         <h3>
-                            Testimonial
+                            Testimonials
                         </h3>
                     </div>
                 </div>
@@ -204,12 +190,12 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-7 col-md-10">
                                     <div class="single_testmonial text-center">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                        <p>Having being a Mystic haven client for the past six months, I'd say their services are amazing.I recommend them for their great services. Try them, you will love it!</p>
                                         <div class="testmonial_author">
                                             <div class="thumb">
                                                 <img src="{% static 'img/testmonial/1.png' %}" alt="">
                                             </div>
-                                            <h3>Watson, web developer</h3>
+                                            <h3>Mueni, Locs and nail client.</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -219,12 +205,12 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-7 col-md-10">
                                     <div class="single_testmonial text-center">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                        <p>For a parent trying to look for a Kid's hairstylist, MysticMane is your go to spot. They offer well tailored services for kids.</p>
                                         <div class="testmonial_author">
                                             <div class="thumb">
                                                 <img src="{% static 'img/testmonial/1.png' %}" alt="">
                                             </div>
-                                            <h3>Watson, web developer</h3>
+                                            <h3>Mama Jay</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -234,12 +220,12 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-7 col-md-10">
                                     <div class="single_testmonial text-center">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                        <p>They are the best, nails done at MysticMane give you a good service for months. I recommend!</p>
                                         <div class="testmonial_author">
                                             <div class="thumb">
                                                 <img src="{% static 'img/testmonial/1.png' %}" alt="">
                                             </div>
-                                            <h3>Watson, web developer</h3>
+                                            <h3>Ariana, Nail client</h3>
                                         </div>
                                     </div>
                                 </div>

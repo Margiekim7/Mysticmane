@@ -54,33 +54,17 @@
                                         <nav>
                                             <ul id="navigation">
                                                 <li><a class="active" href="{% url 'index' %}">home</a></li>
-                                                <li><a href="{% url 'about' %}">about</a></li>
+                                                <li><a href="{% url 'about' %}">About</a></li>
+                                                <li><a href="{% url 'blog' %}">Blog</a></li>
                                                 <li><a href="{% url 'service' %}">services</a></li>
                                                 <li><a href="{% url 'pricing' %}">Pricing</a></li>
                                                 <li><a href="{% url 'appointment' %}">Appointment</a></li>
-
-
-                                                <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                                    <ul class="submenu">
-                                                        <li><a href="{% url 'blog' %}">blog</a></li>
-                                                        <li><a href="{% url 'single_blog' %}">single-blog</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                                    <ul class="submenu">
-
-                                                        <li><a href="{% url 'elements' %}">elements</a></li>
-                                                    </ul>
-                                                </li>
-
+                                                <li><a href="{% url 'contact' %}">Contact</a></li>
                                             </ul>
                                         </nav>
                                     </div>
-                                    <div class="book_room">
-                                        <div class="book_btn">
-                                            <a class="popup-with-form" href="#test-form">Appointment</a>
-                                        </div>
-                                    </div>
+
+
                                 </div>
                             </div>
                         </div>
@@ -105,7 +89,7 @@
                             <div class="slider_text">
                                 <h3>MysticMane Hair Haven</h3>
                                 <p>Unveil your inner radiance at Mystic Mane Hair Haven—where every strand is pampered, every style is art, and your hair’s magic meets our touch.</p>
-                                <a href="#" class="boxed-btn3">Appointment</a>
+                                <a href="{% url 'appointment' %}" class="boxed-btn3">Appointment</a>
                             </div>
                         </div>
                     </div>
@@ -118,7 +102,7 @@
                             <div class="slider_text">
                                 <h3>MysticMane Hair Haven</h3>
                                 <p>Step into Mystic Mane Hair Haven, a sanctuary of style and care, transforming your hair into a masterpiece of beauty, confidence, and enchantment with every visit.</p>
-                                <a href="#" class="boxed-btn3">Appointment</a>
+                                <a href="{% url 'appointment' %}" class="boxed-btn3">Appointment</a>
                             </div>
                         </div>
                     </div>
@@ -131,7 +115,7 @@
                             <div class="slider_text">
                                 <h3>MysticMane Hair Haven</h3>
                                 <p>Mystic Mane Hair Haven: A place where artistry, innovation, and care meet to create breathtaking transformations that celebrate the beauty, strength, and magic of your hair.</p>
-                                <a href="#" class="boxed-btn3">Appointment</a>
+                                <a href="{% url 'appointment' %}" class="boxed-btn3">Appointment</a>
                             </div>
                         </div>
                     </div>

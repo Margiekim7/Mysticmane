@@ -52,33 +52,18 @@
                                 <div class="menu_wrap_inner d-flex align-items-center justify-content-end">
                                     <div class="main-menu">
                                         <nav>
-                                            <ul id="navigation">
+                                             <ul id="navigation">
                                                 <li><a class="active" href="{% url 'index' %}">home</a></li>
-                                                 <li><a href="{% url 'about' %}">about</a></li>
-                                                <li><a href="{% url 'service' %}">Services</a></li>
+                                                <li><a href="{% url 'about' %}">About</a></li>
+                                                <li><a href="{% url 'blog' %}">Blog</a></li>
+                                                <li><a href="{% url 'service' %}">services</a></li>
                                                 <li><a href="{% url 'pricing' %}">Pricing</a></li>
                                                 <li><a href="{% url 'appointment' %}">Appointment</a></li>
-                                                <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                                    <ul class="submenu">
-                                                        <li><a href="{% url 'blog' %}">blog</a></li>
-                                                        <li><a href="{% url 'single_blog' %}">single-blog</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                                    <ul class="submenu">
-                                                        <li><a href="{% url 'about' %}">about</a></li>
-                                                        <li><a href="{% url 'elements' %}">elements</a></li>
-                                                    </ul>
-                                                </li>
-
+                                                <li><a href="{% url 'contact' %}">Contact</a></li>
                                             </ul>
                                         </nav>
                                     </div>
-                                    <div class="book_room">
-                                        <div class="book_btn">
-                                            <a class="popup-with-form" href="#test-form">Appointment</a>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -98,6 +83,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h3>Pricing</h3>
+                    <a href="{% url 'appointment' %}" class="boxed-btn3">Appointment</a>
                 </div>
             </div>
         </div>
