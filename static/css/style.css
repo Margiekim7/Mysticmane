@@ -1682,7 +1682,7 @@ h3 {
   -webkit-box-shadow: 0px 0px 46px 0px rgba(0, 0, 0, 0.28);
   -moz-box-shadow: 0px 0px 46px 0px rgba(0, 0, 0, 0.28);
   box-shadow: 0px 0px 46px 0px rgba(0, 0, 0, 0.28);
-  color: #eb592d;
+  color: #0439bd;
   text-align: center;
   line-height: 55px;
   position: absolute;
@@ -6164,3 +6164,6 @@ h6 {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+/*blog styling*/

@@ -43,7 +43,7 @@
                         <div class="col-xl-3 col-lg-3">
                             <div class="logo-img">
                                 <a href="{% url 'index' %}">
-                                    <img src="{% static 'img/logo.png' %}" alt="">
+                                    <img src="{% static 'static/hair img/woman-hair.png' %}" alt="">
                                 </a>
                             </div>
                         </div>
@@ -60,6 +60,8 @@
                                                 <li><a href="{% url 'pricing' %}">Pricing</a></li>
                                                 <li><a href="{% url 'appointment' %}">Appointment</a></li>
                                                 <li><a href="{% url 'contact' %}">Contact</a></li>
+                                                 <li><a href="{% url 'show' %}">Show</a></li>
+                                                 <li> <a href="{% url 'appointment' %}" class="boxed-btn3">Appointment</a></li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -712,8 +714,8 @@
                     <div class="col-xl-5 col-md-6 col-lg-5 ">
                         <div class="footer_widget">
                             <div class="footer_logo">
-                                <a href="#">
-                                    <img src="{% static 'img/logo.png' %}" alt="">
+                                <a href="{% url 'index' %}">
+                                    <img src="{% static 'static/hair img/woman-hair.png' %}" alt="">
                                 </a>
                             </div>
                             <p class="address_text">Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit, sed do eiusmod tempor <br> incididunt ut labore et dolore magna aliqua. <br> Quis ipsum suspendisse.
@@ -751,9 +753,10 @@
                                 Information
                             </h3>
                             <ul class="links">
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Testimonial</a></li>
+                                <li><a href="{% url 'about' %}">About</a></li>
+                                <li><a href="{% url 'service' %}">Services</a></li>
+                                <li><a href="{% url 'appointment' %}">Book an appointment</a></li>
+                                <li><a href="{% url 'contact' %}">Contact Us!</a></li>
                             </ul>
                         </div>
                     </div>

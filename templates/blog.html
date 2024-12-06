@@ -1,342 +1,132 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
+{% extends 'starterpage.html' %}
+{% load static %}
+<h3>{%block header%} Blog  {%endblock%}</h3>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Barber</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% block body %}
 
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'static/assets/vendor/bootstrap/css/bootstrap.min.css' %}">
-    <script src="{% static 'static/assets/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <style>
+    .blog-card {
+    border-radius: 10px;
+    overflow: hidden;
+}
 
-    <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
-    <!-- Place favicon.ico in the root directory -->
+.blog-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
 
-    <!-- CSS here -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
-    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
-    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
-    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
-    <link rel="stylesheet" href="{% static 'css/gijgo.css' %}">
-    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
-    <link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
-</head>
+.blog-card .card-footer {
+    background-color: #f8f9fa;
+    font-style: italic;
+    text-align: right;
+    border-top: none;
+}
 
-<body>
-    <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
+h1 {
+    font-family: 'Merriweather', serif;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+</style>
 
-    <!-- header-start -->
-    <header>
-        <div class="header-area ">
-            <div id="sticky-header" class="main-header-area">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-3 col-lg-3">
-                            <div class="logo-img">
-                                <a href="{% url 'index' %}">
-                                    <img src="{% static 'img/logo.png' %}" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xl-9 col-lg-9">
-                            <div class="menu_wrap d-none d-lg-block">
-                                <div class="menu_wrap_inner d-flex align-items-center justify-content-end">
-                                    <div class="main-menu">
-                                        <nav>
-                                             <ul id="navigation">
-                                                <li><a class="active" href="{% url 'index' %}">home</a></li>
-                                                <li><a href="{% url 'about' %}">About</a></li>
-                                                <li><a href="{% url 'blog' %}">Blog</a></li>
-                                                <li><a href="{% url 'service' %}">services</a></li>
-                                                <li><a href="{% url 'pricing' %}">Pricing</a></li>
-                                                <li><a href="{% url 'appointment' %}">Appointment</a></li>
-                                                <li><a href="{% url 'contact' %}">Contact</a></li>
-                                            </ul>
-                                        </nav>
-                                    </div>
 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
-                    </div>
+
+
+ <!-- Blog Content -->
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Our Latest Blog Posts</h1>
+    <div class="row g-4">
+        <!-- Blog Post 1 -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card blog-card h-100 shadow-sm">
+                <img src="{% static 'static/hair img/healthy hair.png' %}" class="card-img-top" alt="Healthy Hair">
+                <div class="card-body">
+                    <h5 class="card-title">5 Tips for Healthy Hair</h5>
+                    <p class="card-text text-muted">
+                        Nurture your hair with regular trims, gentle shampoos, and deep conditioning treatments. Protect it from heat damage and embrace a diet rich in vitamins.
+                    </p>
+
                 </div>
+                <div class="card-footer text-muted small">Posted on March 10, 2024</div>
             </div>
         </div>
-    </header>
-    <!-- header-end -->
 
-     <!-- bradcam_area_start -->
-     <div class="bradcam_area breadcam_bg overlay">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h3>Blog</h3>
-                   <div>
-                       <a href="{% url 'appointment' %}" class="boxed-btn3">Appointment</a></div>
+        <!-- Blog Post 2 -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card blog-card h-100 shadow-sm">
+                <img src="{% static 'static/hair img/hairtrend.png' %}" class="card-img-top" alt="Hair Trends">
+                <div class="card-body">
+                    <h5 class="card-title">Top Hair Trends in 2024</h5>
+                    <p class="card-text text-muted">
+                        Stay ahead with 2024's top hair trends! Embrace sleek, glassy bobs, textured curtain bangs, and glossy long layers.
+                    </p>
+
                 </div>
+                <div class="card-footer text-muted small">Posted on February 20, 2024</div>
             </div>
         </div>
-    </div>
-    <!-- bradcam_area_end -->
 
+        <!-- Blog Post 3 -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card blog-card h-100 shadow-sm">
+                <img src="{% static 'static/hair img/haircut.png' %}" class="card-img-top" alt="Choosing Haircuts">
+                <div class="card-body">
+                    <h5 class="card-title">Choosing the Right Haircut</h5>
+                    <p class="card-text text-muted">
+                        Choose the perfect haircut by understanding your face shape, lifestyle, and hair texture. Consult a stylist to find a style that enhances your features.
+                    </p>
 
-<!-- Blog Content -->
-    <div class="container">
-        <div class="row">
-            <!-- Blog Post 1 -->
-            <div class="col-md-6 blog-post">
-                <h2>5 Tips for Healthy Hair</h2>
-                <p>Nurture your hair with regular trims, gentle shampoos, and deep conditioning treatments. Protect it from heat damage using thermal sprays, and embrace a diet rich in vitamins. Avoid excessive chemical treatments, and opt for silk pillowcases to reduce breakage. Hydrate, minimize stress, and let your hair thrive naturally!</p>
-                <img src="" alt="">
+                </div>
+                <div class="card-footer text-muted small">Posted on January 15, 2024</div>
             </div>
+        </div>
 
-            <!-- Blog Post 2 -->
-            <div class="col-md-6 blog-post">
-                <h2>Top Hair Trends in 2024</h2>
-                <p>Stay ahead with 2024's top hair trends! Embrace sleek, glassy bobs, textured curtain bangs, and glossy long layers. Natural curls take the spotlight, paired with bold accessories. Expect vibrant hair colors like coppery reds, pastel pinks, and icy blues to reign, while effortless, lived-in hairstyles continue to dominate the scene. </p>
-                <img src="" alt="">
+        <!-- Blog Post 4 -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card blog-card h-100 shadow-sm">
+                <img src="{% static 'static/hair img/bridalhair.png' %}" class="card-img-top" alt="Bridal Hair">
+                <div class="card-body">
+                    <h5 class="card-title">Bridal Hair Inspiration</h5>
+                    <p class="card-text text-muted">
+                        For bridal hair, opt for timeless elegance with soft curls, chic updos, or romantic braided styles adorned with flowers or pearls.
+                    </p>
+
+                </div>
+                <div class="card-footer text-muted small">Posted on December 25, 2023</div>
             </div>
+        </div>
 
+        <!-- Blog Post 5 -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card blog-card h-100 shadow-sm">
+                <img src="{% static 'static/hair img/curly.png' %}" class="card-img-top" alt="Curly Hair">
+                <div class="card-body">
+                    <h5 class="card-title">Styling Tips for Curly Hair</h5>
+                    <p class="card-text text-muted">
+                        Enhance curly hair with hydrating shampoos and conditioners to combat dryness. Air-dry or use a diffuser for natural bounce.
+                    </p>
 
-            <!-- Blog Post 4 -->
-            <div class="col-md-6 blog-post">
-                <h2>Choosing the Right Haircut</h2>
-                <p>Choosing the perfect haircut starts with understanding your face shape, lifestyle, and hair texture. Consult a stylist to find a style that enhances your features. Consider maintenance, desired length, and current trends. Always prioritize a cut that makes you feel confident and complements your unique personality for a stunning look!</p>
-                <img src="" alt="">
+                </div>
+                <div class="card-footer text-muted small">Posted on November 15, 2023</div>
             </div>
+        </div>
 
-            <!-- Blog Post 5 -->
-            <div class="col-md-6 blog-post">
-                <h2>Bridal Hair Inspiration</h2>
-                <p>For bridal hair, opt for timeless elegance with soft curls, chic updos, or romantic braided styles adorned with flowers or pearls. Consider your dress neckline, theme, and personal taste. Classic chignons or loose waves offer versatile beauty. Trust your stylist to create a look that complements your radiant bridal glow!</p>
-                <img src="" alt="">
-            </div>
+        <!-- Blog Post 6 -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card blog-card h-100 shadow-sm">
+                <img src="{% static 'static/hair img/hairgrowth.png' %}" class="card-img-top" alt="Hair Growth Oils">
+                <div class="card-body">
+                    <h5 class="card-title">Hair Growth Oils</h5>
+                    <p class="card-text text-muted">
+                        Hair growth oils like castor, coconut, and argan oil nourish the scalp, strengthen roots, and boost circulation.
+                    </p>
 
-            <!-- Blog Post 6 -->
-            <div class="col-md-6 blog-post">
-                <h2>Styling Tips for Curly Hair</h2>
-                <p>Enhance curly hair with hydrating shampoos and conditioners to combat dryness. Use a wide-tooth comb on wet hair and apply curl-defining products. Air-dry or use a diffuser for natural bounce. Avoid heat styling, embrace frizz control serums, and opt for regular trims to maintain shape and healthy, stunning curls.</p>
-                <img src="" alt="">
-            </div>
-
-
-
-            <!-- Blog Post 8 -->
-            <div class="col-md-6 blog-post">
-                <h2>Hair Growth Oils</h2>
-                <p>Hair growth oils like castor, coconut, and argan oil nourish the scalp, strengthen roots, and boost circulation. Rich in vitamins and fatty acids, they combat dryness, reduce breakage, and promote healthy strands. Regular massages with these oils encourage thicker, longer, and shinier hair naturally and effectively over time.</p>
-                <img src="" alt="">
-            </div>
-
-
-            <!-- Blog Post 10 -->
-            <div class="col-md-6 blog-post">
-                <h2>FAQs About Hair Treatments </h2>
-                <p>Hair treatments cater to various needs like hydration, repair, and color enhancement. Common questions include: How often should I treat my hair? (Monthly for deep treatments). Are treatments safe for colored hair? (Yes, with sulfate-free options). Do they prevent damage? (They repair and strengthen). Consult a stylist for personalized advice.</p>
-                <img src="" alt="">
+                </div>
+                <div class="card-footer text-muted small">Posted on October 10, 2023</div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- footer -->
-    <footer class="footer">
-            <div class="footer_top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-3 col-md-6 col-lg-3">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                    Join With Us
-                                </h3>
-                                <p class="footer_text doanar"> <a class="first" href="#">Make Appointment</a> <br>
-                                    <a href="#">+10 378 478 2789</a></p>
-    
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 col-lg-3">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                    address
-                                </h3>
-                                <p class="footer_text">200, A-block, Green road, USA <br>
-                                    +10 367 267 2678 <br>
-                                    <a class="domain" href="#">contact@nonprofit.com</a></p>
-                                <div class="socail_links">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-facebook-square"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-md-6 col-lg-2">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                    Navigation
-                                </h3>
-                                <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Rooms</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">News</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6 col-lg-4">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                    Newsletter
-                                </h3>
-                                <form action="#" class="newsletter_form">
-                                    <input type="text" placeholder="Enter your mail">
-                                    <button type="submit">Sign Up</button>
-                                </form>
-                                <p class="newsletter_text">Subscribe newsletter to get updates</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="copy-right_text">
-                <div class="container">
-                    <div class="footer_border"></div>
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <p class="copy_right text-center">
-                                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    <!-- footer -->
-    
-    <!-- link that opens popup -->
-
-    <!-- form itself end-->
-    <form id="test-form" class="white-popup-block mfp-hide">
-        <div class="popup_box ">
-                <div class="popup_inner">
-                    <h3>Make an Appointment</h3>
-                    <form action="#">
-                        <div class="row">
-                            <div class="col-xl-6 col-md-6">
-                                <input id="datepicker" placeholder="Date">
-                            </div>
-                            <div class="col-xl-6 col-md-6">
-                                <input id="timepicker" placeholder="time">
-                            </div>
-                            <div class="col-xl-6 col-md-6">
-                                <select class="form-select wide" id="default-select" class="">
-                                    <option data-display="Choose services">Choose services 1</option>
-                                    <option value="1">Choose services 2</option>
-                                    <option value="2">Choose services 3</option>
-                                    <option value="3">Choose services 4</option>
-                                </select>
-                            </div>
-                            <div class="col-xl-6 col-md-6">
-                                <select class="form-select wide" id="default-select" class="">
-                                    <option data-display="Choose Barbers">Choose Barbers</option>
-                                    <option value="1">Zaki</option>
-                                    <option value="2">Ronky</option>
-                                    <option value="3">kalu</option>
-                                </select>
-                            </div>
-                            <div class="col-xl-6 col-md-6">
-                                <input type="text" placeholder="Your name">
-                            </div>
-                            <div class="col-xl-6 col-md-6">
-                                <input type="text" placeholder="Phone no">
-                            </div>
-                            <div class="col-xl-12">
-                                <input type="email" placeholder="Your email">
-                            </div>
-                            <div class="col-xl-12">
-                                <button type="submit" class="boxed-btn3">Submit</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-    </form>
-    <!-- form itself end -->
-
-    <!-- JS here -->
-    <script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
-    <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
-    <script src="{% static 'js/ajax-form.js' %}"></script>
-    <script src="{% static 'js/waypoints.min.js' %}"></script>
-    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
-    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
-    <script src="{% static 'js/scrollIt.js' %}"></script>
-    <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
-    <script src="{% static 'js/wow.min.js' %}"></script>
-    <script src="{% static 'js/nice-select.min.js' %}"></script>
-    <script src="{% static 'js/jquery.slicknav.min.js' %}"></script>
-    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
-    <script src="{% static 'js/plugins.js' %}"></script>
-    <script src="{% static 'js/gijgo.min.js' %}"></script>
-
-    <!--contact js-->
-    <script src="{% static 'js/contact.js' %}"></script>
-    <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
-    <script src="{% static 'js/jquery.form.js' %}"></script>
-    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
-    <script src="{% static 'js/mail-script.js' %}"></script>
-
-    <script src="{% static 'js/main.js' %}"></script>
-    <script>
-        $('#datepicker').datepicker({
-            iconsLibrary: 'fontawesome',
-            disableDaysOfWeek: [0, 0],
-        //     icons: {
-        //      rightIcon: '<span class="fa fa-caret-down"></span>'
-        //  }
-        });
-        $('#datepicker2').datepicker({
-            iconsLibrary: 'fontawesome',
-            icons: {
-             rightIcon: '<span class="fa fa-caret-down"></span>'
-         }
-
-        });
-        var timepicker = $('#timepicker').timepicker({
-         format: 'HH.MM'
-     });
-    </script>
-</body>
-</html>
+{% endblock %}
