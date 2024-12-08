@@ -56,15 +56,31 @@ def delete(request,id):
     appoint.delete()
     return redirect('/show')
 
-def edit(request,id):
-   editappointment=Appointment.objects.get(id=id)
+# def edit(request,id):
+#    editappointment=Appointment.objects.get(id=id)
+#    return render(request, 'edit.html', {'appointment':editappointment})
+#
+# def update(request, id):
+#    updateinfo = Appointment.objects.get(id=id)
+#    form=AppointmentForm(request.POST, instance=updateinfo)
+#    if form.is_valid():
+#        form.save()
+#        return redirect('/show')
+#    else:
+#        return render(request, 'edit.html')
+
+
+
+
+def edit(request, id):
+   editappointment = Appointment.objects.get(id=id)
    return render(request, 'edit.html', {'appointment':editappointment})
 
 def update(request, id):
-   updateinfo = Appointment.objects.get(id=id)
-   form=AppointmentForm(request.POST, instance=updateinfo)
-   if form.is_valid():
-       form.save()
-       return redirect('/show')
-   else:
-       return render(request, 'edit.html')
+    updateinfo = Appointment.objects.get(id=id)
+    form = AppointmentForm(request.POST, instance=updateinfo)
+    if form.is_valid():
+        form.save()
+        return redirect('/show')
+    else:
+        return render(request, 'edit.html')
