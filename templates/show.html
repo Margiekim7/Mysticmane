@@ -3,7 +3,7 @@
 
 <h3>{%block header%}  {%endblock%}</h3>
 {% block body %}
-<h2>Appointment Information</h2> <br><br><br>
+<h2 class="text-center mt-5">Appointment Information </h2> <br><br><br>
     <table class="table table-hover container">
     <tr>
         <th>Name</th>
@@ -24,9 +24,9 @@
             <td>{{ x.stylist }}</td>
             <td>{{ x.message }}</td>
         <td>
-            <a href="/edit/{{ x.id }}" class="btn btn-warning">EDIT</a>
+            <a href="/edit/{{ x.id }}" class="btn btn-success">EDIT</a>
             <a href="/delete/{{ x.id }}" class="btn btn-danger">DELETE</a>
-            <a href="" class="btn btn-success">PAY</a>
+
         </td>
         </tr>
     {% endfor %}

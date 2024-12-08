@@ -4,14 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>MysticMane</title>
+    <title>MysticManeHaven</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
     {% load static %}
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-{#    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">#}
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'static/hairimg/woman-hair.png' %}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -27,6 +28,61 @@
     <link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+<style>
+        #navigation {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Use flexbox to align items in one line */
+    justify-content: space-around; /* Distributes items evenly */
+    align-items: center; /* Aligns items vertically */
+}
+
+#navigation li {
+    margin: 0 15px; /* Add spacing between the items */
+}
+#navigation a:hover {
+    color: #ed420a; /* Changes color on hover */
+    -moz-border-radius: 5px;
+
+#navigation a:active{
+color: #ed420a;/* Highlight the active link */
+    font-weight: bold;
+    border-bottom: 2px solid #bc9b8f; /* Optional: Add underline or border */
+}
+
+.service-img {
+    height: 200px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio while filling the specified dimensions */
+    width: 100%; /* Ensures the image stretches to fit the card width */
+    border-radius: 8px; /* Optional rounded corners */
+}
+
+.blog-card {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.blog-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-card .card-footer {
+    background-color: #f8f9fa;
+    font-style: italic;
+    text-align: right;
+    border-top: none;
+}
+
+h1 {
+    font-family: 'Merriweather', serif;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+    </style>
+
 </head>
 
 <body>
@@ -43,7 +99,7 @@
                         <div class="col-xl-3 col-lg-3">
                             <div class="logo-img">
                                 <a href="{% url 'index' %}">
-                                    <img src="{% static 'static/hair img/woman-hair.png' %}" alt="">
+                                    <img src="{% static 'static/hairimg/woman-hair.png' %}" alt="">
                                 </a>
                             </div>
                         </div>
@@ -61,7 +117,7 @@
                                                 <li><a href="{% url 'appointment' %}">Appointment</a></li>
                                                 <li><a href="{% url 'contact' %}">Contact</a></li>
                                                  <li><a href="{% url 'show' %}">Show</a></li>
-                                                 <li> <a href="{% url 'appointment' %}" class="boxed-btn3">Appointment</a></li>
+                                                 <li> <a href="{% url 'appointment' %}" class="boxed-btn3 rounded pt-3 pb-3">Appointment</a></li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -91,7 +147,8 @@
                             <div class="slider_text">
                                 <h3>MysticMane Hair Haven</h3>
                                 <p>Unveil your inner radiance at Mystic Mane Hair Haven—where every strand is pampered, every style is art, and your hair’s magic meets our touch.</p>
-                                <a href="{% url 'appointment' %}" class="boxed-btn3">Appointment</a>
+                                <a href="{% url 'appointment' %}" class="boxed-btn3 rounded mr-4">Appointment</a>
+                                 <a href="{% url 'contact' %}" class="boxed-btn3 rounded">Contact Us!</a>
                             </div>
                         </div>
                     </div>
@@ -104,7 +161,8 @@
                             <div class="slider_text">
                                 <h3>MysticMane Hair Haven</h3>
                                 <p>Step into Mystic Mane Hair Haven, a sanctuary of style and care, transforming your hair into a masterpiece of beauty, confidence, and enchantment with every visit.</p>
-                                <a href="{% url 'appointment' %}" class="boxed-btn3">Appointment</a>
+                                <a href="{% url 'appointment' %}" class="boxed-btn3 rounded mr-4">Appointment</a>
+                                 <a href="{% url 'contact' %}" class="boxed-btn3 rounded  ">Contact Us!</a>
                             </div>
                         </div>
                     </div>
@@ -117,7 +175,8 @@
                             <div class="slider_text">
                                 <h3>MysticMane Hair Haven</h3>
                                 <p>Mystic Mane Hair Haven: A place where artistry, innovation, and care meet to create breathtaking transformations that celebrate the beauty, strength, and magic of your hair.</p>
-                                <a href="{% url 'appointment' %}" class="boxed-btn3">Appointment</a>
+                                <a href="{% url 'appointment' %}" class="boxed-btn3 rounded mr-4">Appointment</a>
+                                 <a href="{% url 'contact' %}" class="boxed-btn3 rounded  ">Contact Us!</a>
                             </div>
                         </div>
                     </div>
@@ -134,10 +193,10 @@
                 <div class="col-xl-6 col-lg-6 col-md-6">
                     <div class="about_thumbs">
                         <div class="large_img_1">
-                            <img src="{% static 'img/about/about_lft.png' %}" alt="">
+                              <img src="{% static 'static/hairimg/lupita.png' %}" alt="">
                         </div>
                         <div class="small_img_1">
-                            <img src="{% static 'img/about/about_right.png' %}" alt="">
+                           <img src="{% static 'static/hairimg/latino.png' %}" alt="">
                         </div>
                     </div>
                 </div>
@@ -151,7 +210,7 @@
                             Opening Hour
                             <span>7:00 am - 10:00 pm</span>
                         </p>
-                        <a href="{% url 'about' %}" class="boxed-btn3">About Us</a>
+                        <a href="{% url 'about' %}" class="boxed-btn3 rounded">About Us</a>
                     </div>
                 </div>
             </div>
@@ -159,64 +218,149 @@
     </div>
     <!-- about_area_end -->
 
-     <!-- services area -->
-    <div class="service_area">
-        <div class="container">
-            <div class="row justify-content-center ">
-                <div class="col-lg-6 col-md-10">
-                    <div class="section_title text-center mb-55">
-                        <h3>Our Services</h3>
-                        <p>At Mystic Mane Hair Haven, we offer  variety of services. Our Beautique Offerings are crafted to elevate your hair care experience. From luxurious treatments to trendsetting cuts, bold coloring, and nourishing therapies, we’re here to pamper, style, and inspire your look. Discover beauty, redefined.</p>
+     <!-- Blog Content -->
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Our Latest Blog Posts</h1>
+    <div class="row g-4">
+        <!-- Blog Post 1 -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card blog-card h-100 shadow-sm">
+                <img src="{% static 'static/hairimg/healthy hair.png' %}" class="card-img-top" alt="Healthy Hair">
+                <div class="card-body">
+                    <h5 class="card-title">5 Tips for Healthy Hair</h5>
+                    <p class="card-text text-muted">
+                        Nurture your hair with regular trims, gentle shampoos, and deep conditioning treatments. Protect it from heat damage and embrace a diet rich in vitamins.
+                    </p>
+
+                </div>
+                <div class="card-footer text-muted small">Posted on March 10, 2024</div>
+            </div>
+        </div>
+
+        <!-- Blog Post 2 -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card blog-card h-100 shadow-sm">
+                <img src="{% static 'static/hairimg/hairtrend.png' %}" class="card-img-top" alt="Hair Trends">
+                <div class="card-body">
+                    <h5 class="card-title">Top Hair Trends in 2024</h5>
+                    <p class="card-text text-muted">
+                        Stay ahead with 2024's top hair trends! Embrace sleek, glassy bobs, textured curtain bangs, and glossy long layers.
+                    </p>
+
+                </div>
+                <div class="card-footer text-muted small">Posted on February 20, 2024</div>
+            </div>
+        </div>
+
+        <!-- Blog Post 3 -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card blog-card h-100 shadow-sm">
+                <img src="{% static 'static/hairimg/haircut.png' %}" class="card-img-top" alt="Choosing Haircuts">
+                <div class="card-body">
+                    <h5 class="card-title">Choosing the Right Haircut</h5>
+                    <p class="card-text text-muted">
+                        Choose the perfect haircut by understanding your face shape, lifestyle, and hair texture. Consult a stylist to find a style that enhances your features.
+                    </p>
+
+                </div>
+                <div class="card-footer text-muted small">Posted on January 15, 2024</div>
+            </div>
+        </div>
+
+        <!-- Blog Post 4 -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card blog-card h-100 shadow-sm">
+                <img src="{% static 'static/hairimg/bridalhair.png' %}" class="card-img-top" alt="Bridal Hair">
+                <div class="card-body">
+                    <h5 class="card-title">Bridal Hair Inspiration</h5>
+                    <p class="card-text text-muted">
+                        For bridal hair, opt for timeless elegance with soft curls, chic updos, or romantic braided styles adorned with flowers or pearls.
+                    </p>
+
+                </div>
+                <div class="card-footer text-muted small">Posted on December 25, 2023</div>
+            </div>
+        </div>
+
+        <!-- Blog Post 5 -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card blog-card h-100 shadow-sm">
+                <img src="{% static 'static/hairimg/curly.png' %}" class="card-img-top" alt="Curly Hair">
+                <div class="card-body">
+                    <h5 class="card-title">Styling Tips for Curly Hair</h5>
+                    <p class="card-text text-muted">
+                        Enhance curly hair with hydrating shampoos and conditioners to combat dryness. Air-dry or use a diffuser for natural bounce.
+                    </p>
+
+                </div>
+                <div class="card-footer text-muted small">Posted on November 15, 2023</div>
+            </div>
+        </div>
+
+        <!-- Blog Post 6 -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card blog-card h-100 shadow-sm">
+                <img src="{% static 'static/hairimg/hairgrowth.png' %}" class="card-img-top" alt="Hair Growth Oils">
+                <div class="card-body">
+                    <h5 class="card-title">Hair Growth Oils</h5>
+                    <p class="card-text text-muted">
+                        Hair growth oils like castor, coconut, and argan oil nourish the scalp, strengthen roots, and boost circulation.
+                    </p>
+
+                </div>
+                <div class="card-footer text-muted small">Posted on October 10, 2023</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Services Area -->
+<div class="service_area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-10">
+                <div class="section_title text-center mb-5">
+                    <h3>Our Services</h3>
+                    <p>At Mystic Mane Hair Haven, we offer a variety of services. From luxurious treatments to trendsetting cuts, bold coloring, and nourishing therapies, we’re here to pamper, style, and inspire your look. Discover beauty, redefined.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <!-- Service Card 1 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="{% static 'static/hairimg/haircolor.png' %}" class="card-img-top service-img" alt="Hair Color">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Hair Color, Highlights & Styling</h5>
+                        <p class="card-text">Expert haircuts and styling to elevate your look! From sleek and sophisticated to bold and trendy, we bring out your best style, making every day a great hair day at Mystic Mane Hair Haven!</p>
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_service">
-                         <div class="service_thumb">
-                             <img src="{% static 'img/service/1.png' %}" alt="">
-                         </div>
-                         <div class="service_content text-center">
-                            <div class="icon">
-                                <i class="flaticon-shave"></i>
-                            </div>
-                            <h3>Hair Color, Highlights & Styling</h3>
-                            <p>Expert haircuts and styling to elevate your look! From sleek and sophisticated to bold and trendy, we bring out your best style, making every day a great hair day at Mystic Mane Hair Haven!</p>
-                         </div>
+            <!-- Service Card 2 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="{% static 'static/hairimg/wedo.png' %}" class="card-img-top service-img" alt="Bridal Styling">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Bridal & Event Hair Styling</h5>
+                        <p class="card-text">Bridal & Event Hair Styling that leaves a lasting impression! Let us craft the perfect hairstyle for your special day, making you feel elegant, timeless, and radiant as you celebrate life’s moments.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_service">
-                         <div class="service_thumb">
-                             <img src="{% static 'img/service/2.png' %}" alt="">
-                         </div>
-                         <div class="service_content text-center">
-                            <div class="icon">
-                                <i class="flaticon-barber"></i>
-                            </div>
-                            <h3>Bridal & Event Hair Styling</h3>
-                            <p>Bridal & Event Hair Styling that leaves a lasting impression! Let us craft the perfect hairstyle for your special day, making you feel elegant, timeless, and radiant as you celebrate life’s moments.</p>
-                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_service">
-                         <div class="service_thumb">
-                             <img src="{% static 'img/service/3.png' %}" alt="">
-                         </div>
-                         <div class="service_content text-center">
-                            <div class="icon">
-                                <i class="flaticon-null"></i>
-                            </div>
-                            <h3>Nail Art & Designs</h3>
-                            <p>Elevate your style, one nail at a time. Discover the world of exquisite nail art and designs, tailored to your unique taste. From classic elegance to bold and trendy, our expert artists will transform your nails into stunning works of art.</p>
-                         </div>
+            </div>
+            <!-- Service Card 3 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="{% static 'static/hairimg/kucha.png' %}" class="card-img-top service-img" alt="Nail Art">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Nail Art & Designs</h5>
+                        <p class="card-text">Elevate your style, one nail at a time. From classic elegance to bold and trendy, our expert artists will transform your nails into stunning works of art.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
- <!-- services area end-->
+</div>
+<!-- Services Area End -->
+
 
 
      <!-- pricing area start -->
@@ -241,9 +385,7 @@
                                 </div>
                                 <div class="single_service">
                                     <div class="service_inner">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/prising/1.png' %}" alt="">
-                                        </div>
+
                                     </div>
                                     <div class="hair_style_info">
                                         <div class="prise d-flex justify-content-between">
@@ -255,9 +397,7 @@
                                 </div>
                                 <div class="single_service">
                                     <div class="service_inner">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/prising/1.png' %}" alt="">
-                                        </div>
+
                                     </div>
                                     <div class="hair_style_info">
                                         <div class="prise d-flex justify-content-between">
@@ -269,9 +409,7 @@
                                 </div>
                                 <div class="single_service">
                                     <div class="service_inner">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/prising/1.png' %}" alt="">
-                                        </div>
+
                                     </div>
                                     <div class="hair_style_info">
                                         <div class="prise d-flex justify-content-between">
@@ -288,9 +426,7 @@
                                 </div>
                                 <div class="single_service">
                                     <div class="service_inner">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/prising/1.png' %}" alt="">
-                                        </div>
+
                                     </div>
                                     <div class="hair_style_info">
                                         <div class="prise d-flex justify-content-between">
@@ -302,9 +438,7 @@
                                 </div>
                                 <div class="single_service">
                                     <div class="service_inner">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/prising/1.png' %}" alt="">
-                                        </div>
+
                                     </div>
                                     <div class="hair_style_info">
                                         <div class="prise d-flex justify-content-between">
@@ -316,9 +450,7 @@
                                 </div>
                                 <div class="single_service">
                                     <div class="service_inner">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/prising/1.png' %}" alt="">
-                                        </div>
+
                                     </div>
                                     <div class="hair_style_info">
                                         <div class="prise d-flex justify-content-between">
@@ -337,9 +469,7 @@
                                 </div>
                                 <div class="single_service">
                                     <div class="service_inner">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/prising/1.png' %}" alt="">
-                                        </div>
+
                                     </div>
                                     <div class="hair_style_info">
                                         <div class="prise d-flex justify-content-between">
@@ -351,9 +481,7 @@
                                 </div>
                                 <div class="single_service">
                                     <div class="service_inner">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/prising/1.png' %}" alt="">
-                                        </div>
+
                                     </div>
                                     <div class="hair_style_info">
                                         <div class="prise d-flex justify-content-between">
@@ -365,9 +493,7 @@
                                 </div>
                                 <div class="single_service">
                                     <div class="service_inner">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/prising/1.png' %}" alt="">
-                                        </div>
+
                                     </div>
                                     <div class="hair_style_info">
                                         <div class="prise d-flex justify-content-between">
@@ -384,9 +510,7 @@
                                 </div>
                                 <div class="single_service">
                                     <div class="service_inner">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/prising/1.png' %}" alt="">
-                                        </div>
+
                                     </div>
                                     <div class="hair_style_info">
                                         <div class="prise d-flex justify-content-between">
@@ -398,9 +522,7 @@
                                 </div>
                                 <div class="single_service">
                                     <div class="service_inner">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/prising/1.png' %}" alt="">
-                                        </div>
+
                                     </div>
                                     <div class="hair_style_info">
                                         <div class="prise d-flex justify-content-between">
@@ -412,9 +534,7 @@
                                 </div>
                                 <div class="single_service">
                                     <div class="service_inner">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/prising/1.png' %}" alt="">
-                                        </div>
+
                                     </div>
                                     <div class="hair_style_info">
                                         <div class="prise d-flex justify-content-between">
@@ -428,14 +548,13 @@
                         </div>
                         <div class="prising_active d-flex justify-content-between">
                             <div class="single_prising">
-                                <div class="prise_title">
-                                    <h4>Hair Shave(Men's Corner)</h4>
+                               <div class="prise_title">
+                                       <h4>Hair Shave(Men's Corner)</h4>
                                 </div>
+
                                 <div class="single_service">
                                     <div class="service_inner">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/prising/1.png' %}" alt="">
-                                        </div>
+
                                     </div>
                                     <div class="hair_style_info">
                                         <div class="prise d-flex justify-content-between">
@@ -447,9 +566,7 @@
                                 </div>
                                 <div class="single_service">
                                     <div class="service_inner">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/prising/1.png' %}" alt="">
-                                        </div>
+
                                     </div>
                                     <div class="hair_style_info">
                                         <div class="prise d-flex justify-content-between">
@@ -461,9 +578,7 @@
                                 </div>
                                 <div class="single_service">
                                     <div class="service_inner">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/prising/1.png' %}" alt="">
-                                        </div>
+
                                     </div>
                                     <div class="hair_style_info">
                                         <div class="prise d-flex justify-content-between">
@@ -480,9 +595,7 @@
                                 </div>
                                 <div class="single_service">
                                     <div class="service_inner">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/prising/1.png' %}" alt="">
-                                        </div>
+
                                     </div>
                                     <div class="hair_style_info">
                                         <div class="prise d-flex justify-content-between">
@@ -494,9 +607,7 @@
                                 </div>
                                 <div class="single_service">
                                     <div class="service_inner">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/prising/1.png' %}" alt="">
-                                        </div>
+
                                     </div>
                                     <div class="hair_style_info">
                                         <div class="prise d-flex justify-content-between">
@@ -508,9 +619,7 @@
                                 </div>
                                 <div class="single_service">
                                     <div class="service_inner">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/prising/1.png' %}" alt="">
-                                        </div>
+
                                     </div>
                                     <div class="hair_style_info">
                                         <div class="prise d-flex justify-content-between">
@@ -529,55 +638,95 @@
     </div>
  <!-- pricing area end -->
 
-    <!-- team_area_start  -->
-    <div class="team_area">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 col-md-10">
-                    <div class="section_title text-center mb-55">
-                        <h3>Our Stylists</h3>
-                        <p>In MysticMane Haven we have the best stylists, well skilled to give you the best of the best.</p>
-                    </div>
-                </div>
+<!--appointment form-->
+   <div class="container mt-5">
+        <h2 class="text-center mb-4">Book an Appointment</h2>
+        <form  method="POST" class="p-4 border rounded shadow">
+            <!-- Name -->
+             {% csrf_token %}
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_team_member">
-                        <div class="team_thumb">
-                            <img src="{% static 'img/team/1.png' %}" alt="">
-                        </div>
-                        <div class="member_info text-center">
-                            <h3>Maria Njeri</h3>
-                            <p>Hair Stylist and locks technician</p>
-                        </div>
+            <!-- Email -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
+            </div>
+            <!-- Phone -->
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            <!-- Date and Time -->
+            <div class="mb-3">
+                <label for="datetime" class="form-label">Preferred Date & Time</label>
+                <input type="datetime-local" class="form-control" id="datetime" name="datetime" required>
+            </div>
+            <!-- Stylist -->
+            <div class="mb-3">
+                <label for="stylist" class="form-label">Preferred Stylist</label>
+                <select class="form-select" id="stylist" name="stylist" required>
+                    <option selected disabled>Choose your stylist</option>
+                    <option value="1">Stylist 1</option>
+                    <option value="2">Stylist 2</option>
+                    <option value="3">Stylist 3</option>
+                </select>
+            </div>
+            <!-- Message -->
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Any special requests or details?"></textarea>
+            </div>
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Submit Appointment</button>
+            </div>
+        </form>
+    </div>
+<!--End appointment Area-->
+
+
+    <!-- Contact Information -->
+    <section class="container py-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Get in Touch</h2>
+                <p>We'd love to hear from you! Whether you have questions about our services, need haircare advice, or want to book an appointment, feel free to reach out.</p>
+                <ul class="list-unstyled">
+                    <li><strong>Phone:</strong> +254 700 123 456</li>
+                    <li><strong>Email:</strong> info@mysticmanehaven.com</li>
+                    <li><strong>Address:</strong> 123 Glamour Avenue, Thika, Kenya</li>
+                </ul>
+                <p>Operating Hours: Mon - Sat: 9:00 AM - 6:00 PM | Sun: Closed</p>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-md-6">
+                <h2>Drop Us a Message</h2>
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_team_member">
-                        <div class="team_thumb">
-                            <img src="{% static 'img/team/2.png' %}" alt="">
-                        </div>
-                        <div class="member_info text-center">
-                            <h3>Jay Wafula</h3>
-                            <p>Barber and Bridal hir stylist</p>
-                        </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Your Email</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_team_member">
-                        <div class="team_thumb">
-                            <img src="{% static 'img/team/3.png' %}" alt="">
-                        </div>
-                        <div class="member_info text-center">
-                            <h3>Ann Auma</h3>
-                            <p>Nail Technician and Kid's Stylist</p>
-                        </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Your Message</label>
+                        <textarea id="message" name="message" class="form-control" rows="4" placeholder="Write your message here" required></textarea>
                     </div>
-                </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
             </div>
         </div>
-    </div>
-    <!-- team_area_end  -->
+    </section>
+<!-- End Contact Information -->
+
+
 
     <!-- testimonial_area  -->
     <div class="testimonial_area  ">
@@ -601,7 +750,6 @@
                                         <p>Having being a Mystic haven client for the past six months, I'd say their services are amazing.I recommend them for their great services. Try them, you will love it!</p>
                                         <div class="testmonial_author">
                                             <div class="thumb">
-                                                <img src="{% static 'img/testmonial/1.png' %}" alt="">
                                             </div>
                                             <h3>Mueni, Locs and nail client.</h3>
                                         </div>
@@ -616,7 +764,6 @@
                                         <p>For a parent trying to look for a Kid's hairstylist, MysticMane is your go to spot. They offer well tailored services for kids.</p>
                                         <div class="testmonial_author">
                                             <div class="thumb">
-                                                <img src="{% static 'img/testmonial/1.png' %}" alt="">
                                             </div>
                                             <h3>Mama Jay</h3>
                                         </div>
@@ -631,7 +778,6 @@
                                         <p>They are the best, nails done at MysticMane give you a good service for months. I recommend!</p>
                                         <div class="testmonial_author">
                                             <div class="thumb">
-                                                <img src="{% static 'img/testmonial/1.png' %}" alt="">
                                             </div>
                                             <h3>Ariana, Nail client</h3>
                                         </div>
@@ -646,65 +792,6 @@
     </div>
     <!-- /testimonial_area  -->
 
-    <div class="make_apppointment_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section_title pl-68">
-                        <h3>Make an Appointment</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="appoint_ment_form pl-68">
-                        <form action="#">
-                            <div class="single_field">
-                                <input type="text" placeholder="Name">
-                            </div>
-                            <div class="single_field">
-                                <input type="text" placeholder="Email">
-                            </div>
-                            <div class="single_field m-0">
-                                <textarea id="" cols="30" rows="10" placeholder="Message"></textarea>
-                            </div>
-                            <p>Make an appointment with us,we are more than ready to give you the best services <br>
-                               and excited to serve you. </p>
-                            <div class="form_btn">
-                                <button class="boxed-btn3" type="submit">Send message</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-4 offset-lg-1">
-                    <div class="appointMent_info">
-                        <div class="single_appontment">
-                            <h4>Visit our Haven</h4>
-                            <p>Tom Mboya Street, P. O Box 34, 10100.
-                                Nairobi-Kenya</p>
-                        </div>
-                        <div class="single_appontment">
-                            <h4>Message us</h4>
-                            <p>mystichaven@gmail.com <br>
-                                +2547-39-236-420</p>
-                        </div>
-                        <div class="single_appontment">
-                            <h4>Working Hours</h4>
-                            <p class="d-flex justify-content-between">
-                                <span>Monday - Friday</span>
-                                <span>:  09.00am - 23.00pm</span>
-                            </p>
-                            <p class="d-flex justify-content-between">
-                                <span>Sunday</span>
-                                <span>:  09.00am - 16.00pm</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <!-- footer_start  -->
     <footer class="footer">
@@ -715,10 +802,10 @@
                         <div class="footer_widget">
                             <div class="footer_logo">
                                 <a href="{% url 'index' %}">
-                                    <img src="{% static 'static/hair img/woman-hair.png' %}" alt="">
+                                    <img src="{% static 'static/hairimg/woman-hair.png' %}" alt="">
                                 </a>
                             </div>
-                            <p class="address_text">Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit, sed do eiusmod tempor <br> incididunt ut labore et dolore magna aliqua. <br> Quis ipsum suspendisse.
+                            <p class="address_text">Get the best from the best <br> Amazing services for awesome people! <br>Hair done with love.
                             </p>
                             <div class="socail_links">
                                 <ul>
@@ -766,8 +853,8 @@
                                 Services
                             </h3>
                             <ul class="links">
-                                <li>Hair color,Highlights and styling.</li>
-                                <li>Bridal & Event Hair Styling</li>
+                                <li>Hair color & styling.</li>
+                                <li>Bridal Hair Styling</li>
                                 <li>Nail Art & Designs</li>
                             </ul>
                         </div>
@@ -793,7 +880,7 @@
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
                             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | MysticHaven <i class="fa fa-heart" aria-hidden="true"></i>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                         </p>
                     </div>
