@@ -6,6 +6,7 @@
 <h2 class="text-center mt-5">Appointment Information </h2> <br><br><br>
     <table class="table table-hover container">
     <tr>
+        <th>Image</th>
         <th>Name</th>
         <th>Email</th>
         <th>Phone</th>
@@ -17,6 +18,7 @@
     </tr>
     {% for x in appointments %}
     	<tr>
+        <td><img src="{{ x.image }}" alt=""/>  </td>
             <td>{{ x.name }}</td>
             <td>{{ x.email }}</td>
             <td>{{ x.phone }}</td>

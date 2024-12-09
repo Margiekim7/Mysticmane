@@ -32,20 +32,68 @@ def contact(request):
         return redirect('index')
     else:
         return render(request, 'contact.html')
+# def appointment(request):
+#    if request.method == 'POST':
+#       myappointment=Appointment(
+#           name= request.POST['name'],
+#           email= request.POST['email'],
+#           phone= request.POST['phone'],
+#           date= request.POST['datetime'],
+#           stylist= request.POST['stylist'],
+#           image= request.FILES.get('image'),
+#           message= request.POST['message'],
+#       )
+#       myappointment.save()
+#       return redirect('index')
+#    else:
+#        return render(request, 'appointment.html')
+
+# def appointment(request):
+#     if request.method == 'POST':
+#         myappointment = Appointment(
+#             name=request.POST['name'],
+#             email=request.POST['email'],
+#             phone=request.POST['phone'],
+#             date=request.POST['datetime'],
+#             stylist=request.POST['stylist'],
+#             message=request.POST['message'],
+#         )
+#
+#         # Add image only if it's uploaded
+#         image = request.FILES.get('image')
+#         if image:
+#             myappointment.image = image
+#
+#         myappointment.save()
+#         return redirect('index')
+#     else:
+#         return render(request, 'appointment.html')
 def appointment(request):
-   if request.method == 'POST':
-      myappointment=Appointment(
-          name= request.POST['name'],
-          email= request.POST['email'],
-          phone= request.POST['phone'],
-          date= request.POST['datetime'],
-          stylist= request.POST['stylist'],
-          message= request.POST['message'],
-      )
-      myappointment.save()
-      return redirect('index')
-   else:
-       return render(request, 'appointment.html')
+    if request.method == 'POST':
+        print(request.FILES)  # Debug: Check if the image is included
+        image = request.FILES.get('image')  # Get the uploaded file
+        if not image:
+            print("No image uploaded.")
+        else:
+            print(f"Image uploaded: {image.name}")
+
+        myappointment = Appointment(
+            name=request.POST['name'],
+            email=request.POST['email'],
+            phone=request.POST['phone'],
+            date=request.POST['datetime'],
+            stylist=request.POST['stylist'],
+            image=image,  # Assign image if it exists
+            message=request.POST['message'],
+        )
+        myappointment.save()
+        return redirect('index')
+    else:
+        return render(request, 'appointment.html')
+
+
+
+
 
 def show(request):
     allappointments=Appointment.objects.all()
@@ -84,3 +132,5 @@ def update(request, id):
         return redirect('/show')
     else:
         return render(request, 'edit.html')
+
+

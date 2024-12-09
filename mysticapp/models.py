@@ -17,6 +17,7 @@ class Appointment(models.Model):
     phone = models.IntegerField()
     date = models.DateTimeField()
     stylist = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='images/', blank=True, null=True)
     message = models.TextField(max_length=100)
     def __str__(self):
         return self.name
