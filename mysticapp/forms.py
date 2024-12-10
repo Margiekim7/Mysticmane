@@ -1,8 +1,10 @@
-from django import (forms)
+from django import forms
 from mysticapp.models import Appointment
-
 
 class AppointmentForm(forms.ModelForm):
     class Meta:
         model = Appointment
-        fields = '__all__'
+        fields = ['name', 'email', 'phone', 'date', 'stylist', 'image', 'message']
+        widgets = {
+            'date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+        }

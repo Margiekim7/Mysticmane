@@ -1,60 +1,96 @@
-{% extends 'starterpage.html'  %}
+{% extends 'starterpage.html' %}
 {% load static %}
-<h3>{%block header%} Update Information {%endblock%}</h3>
+
+<h3>{% block header %} Update Appointment {% endblock %}</h3>
+
 {% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
 
-   <div class="container mt-5">
-        <h2 class="text-center mb-4 mt-5">Update Appointment</h2>
-        <form  method="POST" action="/update/{{ appointment.id }}" class="p-4 border rounded shadow">
-            <!-- Name -->
-             {% csrf_token %}
-            <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input value="{{ appointment.name }}" type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
-            </div>
-            <!-- Email -->
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input value="{{ appointment.email }}" type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
-            </div>
-            <!-- Phone -->
-            <div class="mb-3">
-                <label for="phone" class="form-label">Phone</label>
-                <input value="{{ appointment.phone }}" type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
-            </div>
-            <!-- Date and Time -->
-            <div class="mb-3">
-                <label for="datetime" class="form-label">Preferred Date & Time</label>
-                <input value="{{ appointment.date }}" type="datetime-local" class="form-control" id="datetime" name="datetime" required>
-            </div>
-            <!-- Stylist -->
-            <div class="mb-3">
-                <label for="stylist" class="form-label">Preferred Stylist</label>
-                <select class="form-select" value="{{ appointment.stylist }}" id="stylist" name="stylist" required>
-                    <option selected disabled>Choose your stylist</option>
-                    <option value="1">Stylist 1</option>
-                    <option value="2">Stylist 2</option>
-                    <option value="3">Stylist 3</option>
-                </select>
-            </div>
-            <!-- Message -->
-            <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" value="{{ appointment.message }}" id="message" name="message" rows="4" placeholder="Any special requests or details?"></textarea>
-            </div>
-            <!-- Submit Button -->
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary">Update Appointment</button>
-            </div>
-        </form>
+            <form method="POST" action="appointments/update/{{ appointment.id }}" enctype="multipart/form-data" class="p-4 border rounded shadow">
+                {% csrf_token %}
+
+                <div class="row g-3">
+                    <!-- Name -->
+                    <div class="col-md-6 mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input value="{{ appointment.name }}" type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="col-md-6 mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input value="{{ appointment.email }}" type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="col-md-6 mb-3">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input value="{{ appointment.phone }}" type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    </div>
+
+                    <!-- Date and Time -->
+                    <div class="col-md-6 mb-3">
+                        <label for="datetime" class="form-label">Preferred Date & Time</label>
+                        <input
+                            type="datetime-local"
+                            class="form-control"
+                            id="datetime"
+                            name="datetime"
+                            value="{{ appointment.date|date:'Y-m-d\TH:i' }}"
+                            required
+                        >
+                    </div>
+
+                    <!-- Stylist -->
+                    <div class="col-md-6 mb-3">
+                        <label for="stylist" class="form-label">Preferred Stylist</label>
+                        <select class="form-select" id="stylist" name="stylist" required>
+                            <option selected disabled>Choose your stylist</option>
+                            <option value="1" {% if appointment.stylist == '1' %}selected{% endif %}>Stylist 1</option>
+                            <option value="2" {% if appointment.stylist == '2' %}selected{% endif %}>Stylist 2</option>
+                            <option value="3" {% if appointment.stylist == '3' %}selected{% endif %}>Stylist 3</option>
+                        </select>
+                    </div>
+
+                    <!-- Image Upload -->
+                    <div class="col-md-6 mb-3">
+                        <label for="image" class="form-label">Update Image (Optional)</label>
+                        <input
+                            type="file"
+                            class="form-control"
+                            id="image"
+                            name="image"
+                            accept="image/*"
+                        >
+                        {% if appointment.image.url %}
+                            <small class="text-muted">Current image will be replaced</small>
+                        {% endif %}
+                    </div>
+
+                    <!-- Message -->
+                    <div class="col-12 mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea
+                            class="form-control"
+                            id="message"
+                            name="message"
+                            rows="4"
+                            placeholder="Any special requests or details?"
+                        >{{ appointment.message }}</textarea>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Update Appointment</button>
+                </div>
+            </form>
+        </div>
     </div>
+</div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
-
-
-
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 {% endblock %}

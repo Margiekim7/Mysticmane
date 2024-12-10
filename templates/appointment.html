@@ -8,7 +8,7 @@
     <!--appointment form-->
    <div class="container mt-5">
         <h2 class="text-center mb-4">Book an Appointment</h2>
-        <form  method="POST" enctype="multipart/form-data" class="p-4 border rounded shadow">
+        <form method="POST" enctype="multipart/form-data" class="p-4 border rounded shadow">
             <!-- Name -->
              {% csrf_token %}
             <div class="mb-3">
@@ -28,7 +28,7 @@
             <!-- Date and Time -->
             <div class="mb-3">
                 <label for="datetime" class="form-label">Preferred Date & Time</label>
-                <input type="datetime-local" class="form-control" id="datetime" name="datetime" required>
+                <input type="datetime-local" class="form-control" id="datetime" name="date" required>
             </div>
             <!-- Stylist -->
             <div class="mb-3">

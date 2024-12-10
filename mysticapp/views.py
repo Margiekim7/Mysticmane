@@ -1,136 +1,103 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 from mysticapp.models import Appointment, Message
-
 from mysticapp.forms import AppointmentForm
 
 
-# Create your views here.
 def index(request):
-    return render(request,'index.html')
+    return render(request, 'index.html')
+
 
 def about(request):
-    return render(request,'about.html')
+    return render(request, 'about.html')
+
+
 def service(request):
-    return render(request,'service.html')
+    return render(request, 'service.html')
+
+
 def pricing(request):
     return render(request, 'pricing.html')
 
-
-def contact(request):
-    return render(request, 'contact.html')
 def blog(request):
     return render(request, 'blog.html')
 
+
 def contact(request):
     if request.method == 'POST':
-        mymessage=Message(
-            Name= request.POST['name'],
-            email = request.POST['email'],
-            message= request.POST['message']
-        )
-        mymessage.save()
-        return redirect('index')
-    else:
-        return render(request, 'contact.html')
-# def appointment(request):
-#    if request.method == 'POST':
-#       myappointment=Appointment(
-#           name= request.POST['name'],
-#           email= request.POST['email'],
-#           phone= request.POST['phone'],
-#           date= request.POST['datetime'],
-#           stylist= request.POST['stylist'],
-#           image= request.FILES.get('image'),
-#           message= request.POST['message'],
-#       )
-#       myappointment.save()
-#       return redirect('index')
-#    else:
-#        return render(request, 'appointment.html')
+        try:
+            mymessage = Message(
+                Name=request.POST['name'],
+                email=request.POST['email'],
+                message=request.POST['message']
+            )
+            mymessage.save()
+            messages.success(request, 'Your message has been sent successfully!')
+            return redirect('index')
+        except Exception as e:
+            messages.error(request, 'There was an error sending your message.')
+            return render(request, 'contact.html')
+    return render(request, 'contact.html')
 
-# def appointment(request):
-#     if request.method == 'POST':
-#         myappointment = Appointment(
-#             name=request.POST['name'],
-#             email=request.POST['email'],
-#             phone=request.POST['phone'],
-#             date=request.POST['datetime'],
-#             stylist=request.POST['stylist'],
-#             message=request.POST['message'],
-#         )
-#
-#         # Add image only if it's uploaded
-#         image = request.FILES.get('image')
-#         if image:
-#             myappointment.image = image
-#
-#         myappointment.save()
-#         return redirect('index')
-#     else:
-#         return render(request, 'appointment.html')
+
 def appointment(request):
     if request.method == 'POST':
-        print(request.FILES)  # Debug: Check if the image is included
-        image = request.FILES.get('image')  # Get the uploaded file
-        if not image:
-            print("No image uploaded.")
-        else:
-            print(f"Image uploaded: {image.name}")
-
-        myappointment = Appointment(
-            name=request.POST['name'],
-            email=request.POST['email'],
-            phone=request.POST['phone'],
-            date=request.POST['datetime'],
-            stylist=request.POST['stylist'],
-            image=image,  # Assign image if it exists
-            message=request.POST['message'],
-        )
-        myappointment.save()
-        return redirect('index')
-    else:
-        return render(request, 'appointment.html')
-
-
-
+        try:
+            myappointment = Appointment(
+                name=request.POST.get('name'),
+                email=request.POST.get('email'),
+                phone=request.POST.get('phone'),
+                date=request.POST.get('datetime'),  # Changed from 'date' to 'datetime'
+                stylist=request.POST.get('stylist'),
+                image=request.FILES.get('image'),
+                message=request.POST.get('message'),
+            )
+            myappointment.save()
+            messages.success(request, 'Appointment booked successfully!')
+            return redirect('show')
+        except Exception as e:
+            messages.error(request, f'Error booking appointment: {str(e)}')
+            return render(request, 'appointment.html')
+    return render(request, 'appointment.html')
 
 
 def show(request):
-    allappointments=Appointment.objects.all()
-    return render(request,'show.html' ,{'appointments':allappointments})
-
-def delete(request,id):
-    appoint = Appointment.objects.get(id=id)
-    appoint.delete()
-    return redirect('/show')
-
-# def edit(request,id):
-#    editappointment=Appointment.objects.get(id=id)
-#    return render(request, 'edit.html', {'appointment':editappointment})
-#
-# def update(request, id):
-#    updateinfo = Appointment.objects.get(id=id)
-#    form=AppointmentForm(request.POST, instance=updateinfo)
-#    if form.is_valid():
-#        form.save()
-#        return redirect('/show')
-#    else:
-#        return render(request, 'edit.html')
+    all_appointments = Appointment.objects.all().order_by('-date')
+    return render(request, 'show.html', {'appointments': all_appointments})
 
 
+def delete(request, id):
+    try:
+        appoint = get_object_or_404(Appointment, id=id)
+        appoint.delete()
+        messages.success(request, 'Appointment deleted successfully!')
+    except Exception as e:
+        messages.error(request, f'Error deleting appointment: {str(e)}')
+    return redirect('show')
 
 
-def edit(request, id):
-   editappointment = Appointment.objects.get(id=id)
-   return render(request, 'edit.html', {'appointment':editappointment})
-
-def update(request, id):
-    updateinfo = Appointment.objects.get(id=id)
-    form = AppointmentForm(request.POST, instance=updateinfo)
-    if form.is_valid():
-        form.save()
-        return redirect('/show')
-    else:
-        return render(request, 'edit.html')
+def edit(request, appointment_id):
+    try:
+        editappointment = get_object_or_404(Appointment, id=appointment_id)
+        return render(request, 'edit.html', {'appointment': editappointment})
+    except Exception as e:
+        messages.error(request, f'Error retrieving appointment: {str(e)}')
+        return redirect('show')
 
 
+def update(request, appointment_id):
+    updateinfo = get_object_or_404(Appointment, id=appointment_id)
+
+    if request.method == 'POST':
+        form = AppointmentForm(request.POST, request.FILES, instance=updateinfo)
+        if form.is_valid():
+            try:
+                form.save()
+                messages.success(request, 'Appointment updated successfully!')
+                return redirect('show')
+            except Exception as e:
+                messages.error(request, f'Error updating appointment: {str(e)}')
+        else:
+            messages.error(request, 'Please correct the errors in the form.')
+
+    return render(request, 'edit.html', {'appointment': updateinfo})
